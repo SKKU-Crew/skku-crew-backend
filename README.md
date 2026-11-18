@@ -45,15 +45,18 @@ DB 없이 `src/main/resources/seed/*.json` 더미 데이터를 메모리에 올�
 | 순서 | 누가 | 화면 | API |
 |---|---|---|---|
 | 1 | 김민준(1) | 로그인 → 홈 맞춤 공고 | `POST /api/auth/demo-login`, `GET /api/postings/home` |
-| 2 | 김민준 @ GPT | "데이터 분야 공모전 팀원 모집 공고 찾아줘" → 101번 추천 | MCP `search_postings` → J1 |
-| 3 | 김민준 @ GPT | "101번 지원 동기 초안 써서 저장해 줘" → "SKKU Crew에서 확인 후 제출하세요" | MCP `get_posting` → J4, `save_application_draft` → S7 (`source: MCP`) |
+| 2 | 김민준 @ GPT | "데이터 분야 공모전 팀원 모집 중인 공고 찾아줘" → 101번이 포함된 결과 | MCP `search_postings` → J1 |
+| 3-1 | 김민준 @ GPT | "101번 지원 동기 초안 써 줘" → GPT가 추가 질문과 프로필을 보고 초안을 **보여 주기만** 함 (저장 안 함) | MCP `get_posting` → J4, `get_my_profile` → P1 |
+| 3-2 | 김민준 @ GPT | 초안 확인 후 "이걸로 저장해 줘" → ChatGPT 쓰기 확인 → "초안만 저장되었습니다 … SKKU Crew에서 확인 후 제출하세요" | MCP `save_application_draft` → S7 (`source: MCP`) |
 | 4 | 김민준 | 웹에서 공고 101 → 지원하기 → **초안 불러오기**로 GPT 답변 채움 | `GET .../101/application-form` (`draft.exists=true`) |
 | 5 | 김민준 | 공유 항목 선택(요청 연락처 카카오톡 ID는 고정·동의, 전화번호는 프로필에 없음) → 확인 → 제출 | `POST .../101/applications` |
 | 6 | 박지호(4) | 종 아이콘 배지 → 새 지원서 알림 → 지원자 3명, 지원서 열람(연락처는 아직 안 보임) | `GET /api/notifications`, `GET .../101/applications`, `GET /api/applications/{id}/review` |
 | 7 | 박지호 | 합격/불합격 결정 → 조기 마감 → 결과 발표 (모집 인원 2명) | `PATCH .../decision` ×3, `POST .../101/close`, `POST .../101/announce` |
 | 8 | 김민준 | 종 아이콘 → 결과 발표 알림 → 합격 + 모집자 연락처 확인 | `GET /api/notifications`, `GET /api/applications/{id}` |
 
-GPT 단계를 빼고 웹만 시연하려면 2·3을 건너뛰고 4에서 답변을 직접 입력하면 된다.
+3-1·3-2를 나눈 이유: SRS UC-19 대안 흐름 A1은 "AI 클라이언트가 답변을 만들어 사용자 확인을 받은 뒤 save_application_draft를 호출한다"로 되어 있다. 초안 작성과 저장을 한 번에 시키지 말 것.
+
+GPT 단계를 빼고 웹만 시연하려면 2~3-2를 건너뛰고 4에서 답변을 직접 입력하면 된다.
 
 이미 만들어진 상태 보여주기용 데이터:
 - 공고 102: 마감(CLOSED), 미정 지원서 1건 → "미정이 남으면 발표 불가"(409 `UNDECIDED_APPLICATIONS`) 확인용
