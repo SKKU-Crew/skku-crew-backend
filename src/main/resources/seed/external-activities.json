@@ -16,12 +16,12 @@
   {
     "id": 2,
     "type": "INTERN_JOB",
-    "title": "겨울방학 데이터 분석 인턴 모집 (예시)",
-    "organizer": "소프트웨어학과",
+    "title": "2026 통계 체험형 청년인턴 (데이터 직무)",
+    "organizer": "통계 공공기관(예시)",
     "fields": [
       "DATA"
     ],
-    "source": "SKKU_NOTICE",
+    "source": "PUBLIC_API",
     "postedDaysAgo": 3,
     "deadlineDaysFromNow": 7,
     "url": "https://example.com/external/2"
@@ -57,7 +57,7 @@
   {
     "id": 5,
     "type": "RESEARCH_PROGRAM",
-    "title": "학부생 연구 참여 프로그램 겨울학기 모집 (예시)",
+    "title": "학부생 연구 참여 프로그램 겨울학기 모집",
     "organizer": "소프트웨어융합대학",
     "fields": [
       "AI",
@@ -97,7 +97,7 @@
   {
     "id": 8,
     "type": "INTERN_JOB",
-    "title": "스타트업 마케팅 인턴 연계 프로그램 (예시)",
+    "title": "스타트업 마케팅 인턴 연계 프로그램",
     "organizer": "창업지원단",
     "fields": [
       "PLANNING_MARKETING"
@@ -124,15 +124,15 @@
   {
     "id": 10,
     "type": "CONTEST",
-    "title": "캡스톤 디자인 경진대회 참가 안내 (예시)",
-    "organizer": "공학교육혁신센터",
+    "title": "SW중심대학 공동 해커톤 참가자 모집",
+    "organizer": "소프트웨어융합대학",
     "fields": [
       "DEV",
-      "DESIGN"
+      "AI"
     ],
     "source": "SKKU_NOTICE",
-    "postedDaysAgo": 9,
-    "deadlineDaysFromNow": 18,
+    "postedDaysAgo": 16,
+    "deadlineDaysFromNow": 4,
     "url": "https://example.com/external/10"
   }
 ]

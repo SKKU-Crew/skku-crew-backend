@@ -1,5 +1,6 @@
 package com.skkucrew.web;
 
+import com.skkucrew.domain.Codes.ApplicantSort;
 import com.skkucrew.domain.Codes.Decision;
 import com.skkucrew.service.ApplicationService;
 import com.skkucrew.service.AuthService;
@@ -121,12 +122,15 @@ public class ApplicationController {
     // ---------------- 모집자 ----------------
 
     @Tag(name = "5. 검토·선발 (모집자)")
-    @Operation(summary = "지원자 목록", description = "?decision=PENDING 필터. 취소된 지원서는 withdrawn=true")
+    @Operation(summary = "지원자 목록",
+            description = "?decision=PENDING 필터, sort=SUBMITTED(제출순, 기본)|NAME(이름순), keyword=이름·기술 검색. 취소된 지원서는 withdrawn=true")
     @GetMapping("/postings/{postingId}/applications")
     public List<ApplicantItem> applicants(@RequestHeader(value = "Authorization", required = false) String auth,
                                           @PathVariable Long postingId,
-                                          @RequestParam(required = false) Decision decision) {
-        return applicationService.applicants(authService.require(auth), postingId, decision);
+                                          @RequestParam(required = false) Decision decision,
+                                          @RequestParam(defaultValue = "SUBMITTED") ApplicantSort sort,
+                                          @RequestParam(required = false) String keyword) {
+        return applicationService.applicants(authService.require(auth), postingId, decision, sort, keyword);
     }
 
     @Tag(name = "5. 검토·선발 (모집자)")

@@ -8,6 +8,7 @@ import com.skkucrew.domain.ApplicationDraft;
 import com.skkucrew.domain.Codes.DraftSource;
 import com.skkucrew.domain.Codes.NotificationType;
 import com.skkucrew.domain.Codes.QuestionType;
+import com.skkucrew.domain.Codes.ApplicantSort;
 import com.skkucrew.domain.Codes.ContactType;
 import com.skkucrew.domain.Codes.Decision;
 import com.skkucrew.domain.Codes.DisplayStatus;
@@ -253,10 +254,17 @@ public class ApplicationService {
     // 모집자
     // =====================================================================
 
-    public List<ApplicantItem> applicants(Member recruiter, Long postingId, Decision decision) {
+    /** 지원자 목록: 결정 필터, 제출순·이름순 정렬, 이름·기술 검색 (FR-SEL-01, 02) */
+    public List<ApplicantItem> applicants(Member recruiter, Long postingId, Decision decision,
+                                          ApplicantSort sort, String keyword) {
         postingService.getOwned(recruiter, postingId);
+        String kw = keyword == null || keyword.isBlank() ? null : keyword.trim().toLowerCase(java.util.Locale.ROOT);
+        Comparator<ApplicantItem> order = sort == ApplicantSort.NAME
+                ? Comparator.comparing(ApplicantItem::name)
+                : Comparator.comparing(ApplicantItem::submittedAt);
         return store.applicationsOfPosting(postingId).stream()
                 .filter(a -> decision == null || (!a.withdrawn && a.decision == decision))
+                .filter(a -> kw == null || matchesApplicant(a, kw))
                 .map(a -> {
                     Member m = store.member(a.applicantId).orElse(null);
                     Profile pr = store.profile(a.applicantId).orElse(null);
@@ -270,7 +278,25 @@ public class ApplicationService {
                             pr == null ? null : pr.academicStatus, topSkills, a.submittedAt, a.decision,
                             notBlank(a.memo), false);
                 })
+                .sorted(order)
                 .toList();
+    }
+
+    /** 이름 또는 제출 시점 스냅샷의 기술로 검색 (취소된 지원서는 이름만) */
+    private boolean matchesApplicant(Application a, String kw) {
+        String name = store.member(a.applicantId).map(m -> m.name).orElse("");
+        if (name.toLowerCase(java.util.Locale.ROOT).contains(kw)) return true;
+        if (a.withdrawn) return false;
+        Object skills = a.snapshot.get("skills");
+        if (skills instanceof List<?> list) {
+            for (Object o : list) {
+                if (o instanceof Map<?, ?> m && m.get("name") != null
+                        && m.get("name").toString().toLowerCase(java.util.Locale.ROOT).contains(kw)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** 모집자용 지원서 상세. 연락처는 발표 후 합격자만 (FR-SEL-03) */

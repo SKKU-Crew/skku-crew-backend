@@ -63,7 +63,8 @@
 | ExternalType | `CONTEST`, `INTERN_JOB`, `EDUCATION`, `EXTRACURRICULAR`, `RESEARCH_PROGRAM`, `ETC` |
 | SortType | `LATEST` 최신순, `DEADLINE` 마감 임박순 |
 | BookmarkTarget | `POSTING` 교내 공고, `EXTERNAL_ACTIVITY` 외부 활동 |
-| NotificationType | `NEW_APPLICATION` N-01 새 지원서(모집자), `POSTING_CLOSED` N-02 모집 마감·발표 요청(모집자), `RESULT_ANNOUNCED` N-03 결과 발표(지원자), `BOOKMARK_CLOSING_SOON` N-04 관심 공고 마감 임박 |
+| NotificationType | `NEW_APPLICATION` N-01 새 지원서(모집자), `POSTING_CLOSED` N-02 모집 마감·발표 요청(모집자), `RESULT_ANNOUNCED` N-03 결과 발표(지원자), `BOOKMARK_CLOSING_SOON` N-04 관심 공고 마감 임박, `FOLLOWED_ORG_NEW_POSTING` N-05 관심 조직 새 공고 |
+| ApplicantSort | `SUBMITTED` 제출순(기본), `NAME` 이름순 |
 | DraftSource | `WEB` 웹 임시저장, `MCP` GPT 초안 저장 도구 |
 
 > 발표 전에는 지원자에게 결정이 보이지 않는다(BR-06). 지원자는 `displayStatus`만 받는다.
@@ -93,12 +94,17 @@
 | S6 | GET 🔒👤 | `/api/postings/{postingId}/application-draft` | 답변 초안 조회 ("초안 불러오기") |
 | S7 | PUT 🔒👤 | `/api/postings/{postingId}/application-draft` | 답변 초안 저장 (제출 아님) |
 | S8 | DELETE 🔒👤 | `/api/postings/{postingId}/application-draft` | 답변 초안 삭제 |
-| R1 | GET 🔒🏷 | `/api/postings/{postingId}/applications?decision=` | 지원자 목록 |
+| R1 | GET 🔒🏷 | `/api/postings/{postingId}/applications?decision=&sort=&keyword=` | 지원자 목록 (결정 필터, 제출순·이름순, 이름·기술 검색) |
 | R2 | GET 🔒🏷 | `/api/applications/{applicationId}/review` | 지원서 상세 (모집자용, 발표 전 연락처 null) |
 | R3 | PATCH 🔒🏷 | `/api/applications/{applicationId}/decision` | `{ decision, memo }` 저장 |
 | R4 | POST 🔒🏷 | `/api/postings/{postingId}/announce` | 결과 일괄 발표 |
 | R5 | GET 🔒🏷 | `/api/postings/{postingId}/accepted-contacts` | 합격자 연락처 (발표 후) |
-| E1 | GET | `/api/external-activities` | 외부 활동 목록 |
+| E1 | GET | `/api/external-activities` | 외부 활동 목록 (`source=SKKU_NOTICE`면 성대 공지만) |
+| O1 | GET | `/api/organizations/{orgId}` | 조직 페이지 (소개·링크·모집중/지난 공고) |
+| O2 | POST 🔒👤 | `/api/organizations/{orgId}/follow` | 관심 조직 등록 |
+| O3 | DELETE 🔒👤 | `/api/organizations/{orgId}/follow` | 관심 조직 해제 |
+| P3 | PATCH 🔒👤 | `/api/profiles/me/activity-history/{applicationId}` | 활동 이력 공개 여부 `{ visible }` |
+| P4 | GET | `/api/skills?keyword=` | 기술 스택 자동완성 |
 | B1 | GET 🔒👤 | `/api/bookmarks` | 내 관심 목록 (공고 + 외부 활동) |
 | B2 | POST 🔒👤 | `/api/bookmarks` | 관심 저장 `{ targetType, targetId }` |
 | B3 | DELETE 🔒👤 | `/api/bookmarks/{targetType}/{targetId}` | 관심 해제 |
@@ -123,15 +129,16 @@
 | sort | `LATEST`(기본) / `DEADLINE` | |
 | page, size | `0`, `20` | |
 
-서로 다른 항목끼리는 AND. 응답 `items[]`는 PostingCard:
+서로 다른 항목끼리는 AND. 응답 `items[]`는 PostingCard (단체 공고면 `recruiter.orgType`="학회", `verified`=true → 카드의 ✓ 배지):
 
 ```json
 {
   "postingId": 101, "category": "CONTEST",
   "title": "2026 공공데이터 활용 공모전 데이터 분석 팀원 모집",
-  "recruiter": { "type": "PERSONAL", "memberId": 4, "name": "박지훈", "department": "통계학과" },
+  "recruiter": { "type": "PERSONAL", "memberId": 4, "name": "박지호", "department": "통계학과",
+                 "orgType": null, "verified": false },
   "fields": ["DATA", "AI"], "skills": ["Python", "SQL", "Pandas"],
-  "capacity": 3, "deadline": "2026-11-28T18:00:00+09:00", "dDay": 5,
+  "capacity": 2, "deadline": "2026-11-28T18:00:00+09:00", "dDay": 5,
   "status": "OPEN", "requestsContact": true, "bookmarked": false
 }
 ```
@@ -166,23 +173,30 @@ PostingCard 필드 + `activityStart`, `activityEnd`, `activityMode`, `place`, `d
 {
   "postingId": 101,
   "postingTitle": "2026 공공데이터 활용 공모전 데이터 분석 팀원 모집",
-  "fixedItems": { "name": "김민준", "majorPrimary": "소프트웨어학과", "academicStatus": "GRADE_3", "fields": ["DEV", "DATA"] },
+  "fixedItems": { "name": "김민준", "majorPrimary": "소프트웨어학과", "academicStatus": "GRADE_3", "fields": ["DEV", "DATA", "AI"] },
   "selectableItems": {
     "profileImage": { "available": false, "defaultShare": false },
     "bio": { "available": true, "defaultShare": true },
-    "skills": { "available": true, "defaultShare": true },
     "majorsSecondary": { "available": true, "defaultShare": true },
-    "experiences": [ { "id": 21, "title": "캠퍼스 중고거래 웹앱", "defaultShare": true }, { "id": 22, "title": "교내 해커톤 장려상", "defaultShare": true } ],
-    "portfolioLinks": [ { "id": 31, "title": "GitHub", "defaultShare": true } ],
-    "portfolioFiles": [ { "id": 41, "title": "portfolio_minjun.pdf", "defaultShare": false } ]
+    "skills": { "available": true, "defaultShare": true },
+    "experiences": [ { "id": 21, "title": "교통 혼잡도 시각화 프로젝트", "defaultShare": true },
+                     { "id": 22, "title": "캠퍼스 중고거래 웹앱", "defaultShare": true },
+                     { "id": 23, "title": "교내 해커톤 장려상", "defaultShare": true } ],
+    "portfolioLinks": [ { "id": 31, "title": "GitHub", "defaultShare": true }, { "id": 32, "title": "기술 블로그", "defaultShare": true } ],
+    "portfolioFiles": [ { "id": 41, "title": "포트폴리오.pdf", "defaultShare": false } ]
   },
   "contacts": [
     { "type": "SCHOOL_EMAIL", "requested": false, "hasValue": true, "maskedValue": "min***@g.skku.edu" },
-    { "type": "PHONE", "requested": true, "hasValue": true, "maskedValue": "010-****-5678" },
-    { "type": "KAKAO_ID", "requested": true, "hasValue": false, "maskedValue": null },
+    { "type": "PHONE", "requested": false, "hasValue": false, "maskedValue": null },
+    { "type": "KAKAO_ID", "requested": true, "hasValue": true, "maskedValue": "min***" },
     { "type": "PERSONAL_EMAIL", "requested": false, "hasValue": false, "maskedValue": null }
   ],
-  "questions": [ { "id": 1001, "order": 1, "type": "LONG_TEXT", "content": "지원 동기를 적어 주세요.", "required": true, "maxLength": 500 } ]
+  "questions": [
+    { "id": 1001, "order": 1, "type": "LONG_TEXT", "content": "지원 동기를 적어 주세요.", "required": true, "maxLength": 500 },
+    { "id": 1002, "order": 2, "type": "SINGLE_CHOICE", "content": "주 1회 오프라인 회의 참석이 가능한가요?", "required": true, "options": ["가능", "어려움"] },
+    { "id": 1003, "order": 3, "type": "SHORT_TEXT", "content": "사용 가능한 분석 도구를 적어 주세요.", "required": false, "maxLength": 100 }
+  ],
+  "draft": { "exists": false, "...": "S6 참고" }
 }
 ```
 
@@ -201,19 +215,20 @@ PostingCard 필드 + `activityStart`, `activityEnd`, `activityMode`, `place`, `d
     "experienceIds": [21, 22], "portfolioLinkIds": [31], "portfolioFileIds": []
   },
   "contacts": [
-    { "type": "PHONE", "consent": true },
-    { "type": "KAKAO_ID", "consent": true, "value": "minjun_dev", "saveToProfile": true }
+    { "type": "KAKAO_ID", "consent": true }
   ],
   "answers": [
-    { "questionId": 1001, "value": "공공데이터로 백엔드 API를 만들어 본 경험이 있습니다." },
+    { "questionId": 1001, "value": "교통 혼잡도 시각화 프로젝트 경험을 살려 분석과 시각화를 맡고 싶습니다." },
     { "questionId": 1002, "value": "가능" },
-    { "questionId": 1003, "value": "https://github.com/example-minjun" }
+    { "questionId": 1003, "value": "Python(Pandas), SQL" }
   ],
   "agreeToProvide": true
 }
 ```
 
 - 요청 연락처는 `consent:true` 필수, 프로필에 값이 없으면 `value`도 필수 → 아니면 409 `REQUESTED_CONTACT_MISSING`
+  - 프로필에 없는 연락처를 새로 넣을 때: `{ "type": "PHONE", "consent": true, "value": "010-1234-5678", "saveToProfile": true }`
+- 요청하지 않은 연락처(예: 전화번호)는 지원자가 고른 경우에만 `consent:true`로 보낸다
 - 복수 선택 질문은 `value`에 문자열 배열
 - 제출 시점의 프로필이 스냅샷으로 저장됨 (이후 프로필을 고쳐도 지원서는 그대로, BR-08)
 
@@ -223,8 +238,8 @@ PostingCard 필드 + `activityStart`, `activityEnd`, `activityMode`, `place`, `d
 
 ```json
 [ { "applicationId": 505,
-    "posting": { "postingId": 103, "title": "캠퍼스 중고거래 웹앱 백엔드 개발자 모집", "category": "PROJECT",
-                 "deadline": "...", "status": "ANNOUNCED", "recruiterName": "정하늘" },
+    "posting": { "postingId": 103, "title": "데이터 분석 학회 D:LAB 27기 모집", "category": "CLUB",
+                 "deadline": "...", "status": "ANNOUNCED", "recruiterName": "데이터 분석 학회 D:LAB" },
     "displayStatus": "ACCEPTED", "submittedAt": "...", "announcedAt": "..." } ]
 ```
 
@@ -236,9 +251,9 @@ PostingCard 필드 + `activityStart`, `activityEnd`, `activityMode`, `place`, `d
 ```json
 "result": {
   "result": "ACCEPTED",
-  "message": "합격을 축하합니다! ...",
-  "recruiterContact": { "type": "SCHOOL_EMAIL", "value": "haneul.jung@g.skku.edu" },
-  "disclosedContacts": [ { "type": "PHONE", "value": "010-1234-5678", "disclosedAt": "..." } ]
+  "message": "축하합니다! 이번 주 토요일 14시에 OT가 있습니다. ...",
+  "recruiterContact": { "type": "PERSONAL_EMAIL", "value": "dlab.recruit@example.com" },
+  "disclosedContacts": [ { "type": "KAKAO_ID", "value": "minjun_k", "disclosedAt": "..." } ]
 }
 ```
 
@@ -302,6 +317,21 @@ PUT 요청:
   "dDay": 7, "url": "https://example.com/external/2", "bookmarked": true }
 ```
 
+### O1~O3. 조직 페이지
+
+```json
+{ "orgId": 6, "name": "데이터 분석 학회 D:LAB", "orgType": "학회", "verified": true, "logoUrl": null,
+  "intro": "데이터 분석과 머신러닝을 함께 공부하고 ...", "fields": ["DATA", "AI"],
+  "links": [ { "title": "Instagram", "url": "https://example.com/instagram/dlab" }, { "title": "웹사이트", "url": "https://example.com/dlab" } ],
+  "followed": true, "followerCount": 3,
+  "openPostings": [PostingCard...], "pastPostings": [PostingCard...] }
+```
+
+### P3·P4. 프로필 보조
+
+- `PATCH /api/profiles/me/activity-history/505` ← `{ "visible": false }` → 프로필 전체 응답 (해당 이력 `visible` 변경)
+- `GET /api/skills?keyword=fl` → `["Flask", "Flutter"]` (앞글자 일치 우선, 기본 10개)
+
 ### B1~B3. 관심 저장
 
 - `POST /api/bookmarks` ← `{ "targetType": "POSTING", "targetId": 101 }` → `{ "targetType": "POSTING", "targetId": 101, "bookmarked": true }` (이미 저장돼 있어도 200)
@@ -329,6 +359,8 @@ PUT 요청:
 | 지원서 제출 (S2) | 모집자 | `NEW_APPLICATION` | `SCR-12` 지원자 목록 |
 | 조기 마감 (J6) 또는 마감 시각 도래 | 모집자 | `POSTING_CLOSED` | `SCR-12` |
 | 결과 발표 (R4) | 취소하지 않은 모든 지원자 | `RESULT_ANNOUNCED` | `SCR-08` 내 지원 현황 |
+| 관심 공고 마감 24시간 전 (알림 조회 시 확인) | 관심 저장했지만 지원 안 한 회원 | `BOOKMARK_CLOSING_SOON` | `SCR-06` 공고 상세 |
+| 단체가 공고 게시 (J5) | 그 조직을 관심 등록한 회원 | `FOLLOWED_ORG_NEW_POSTING` | `SCR-06` |
 
 웹 푸시(FCM)는 데모에서 뺐다. PWA는 `unread-count`를 화면 전환 때마다 부르면 된다.
 
@@ -338,13 +370,14 @@ PUT 요청:
 
 | 파일 | 내용 |
 |---|---|
-| `members.json` | 회원 10명 (개인 7, 단체 2, 관리자 1) |
-| `profiles.json` | 개인회원 프로필 7개 |
-| `postings.json` | 공고 18개 (101~118: OPEN 15, CLOSED 1, ANNOUNCED 1, DRAFT 1) |
-| `applications.json` | 지원서 10개 (501~510) |
+| `members.json` | 회원 29명 (개인 26, 단체 2, 관리자 1). 12~29번은 D:LAB 27기 지원자 채우기용 |
+| `profiles.json` | 개인회원 프로필 26개 |
+| `postings.json` | 공고 21개 (101~121: OPEN 18, CLOSED 1(102), ANNOUNCED 1(103), DRAFT 1(117)) |
+| `applications.json` | 지원서 32개 (501~532). 103(D:LAB 27기)에 24명: 합격 16·불합격 8 |
 | `external-activities.json` | 외부 활동 10개 |
-| `bookmarks.json` | 관심 저장 9개 (김민준: 공고 101·106·111, 외부 활동 2·5) |
-| `notifications.json` | 알림 13개 (박지훈 안 읽음 2개, 김민준은 모두 읽음 → 발표 시연 때 새 알림이 생김) |
+| `bookmarks.json` | 관심 저장 9개 (김민준: 공고 106·119·120, 외부 활동 2·5) |
+| `notifications.json` | 알림 37개 (김민준 안 읽음 2: D:LAB 결과 발표·관심 공고 마감 임박 / 박지호 안 읽음 2) |
+| `follows.json` | 관심 조직 4개 (김민준·이서연·강도윤 → D:LAB, 한도윤 → R:BOT) |
 | `drafts.json` | 답변 초안 1개 (김민준 → 공고 106, GPT가 저장한 것으로 표시) |
 
 수정하면 서버 재시작 또는 `POST /api/dev/reset` 으로 반영.

@@ -25,7 +25,7 @@ public class NotificationService {
     }
 
     public NotificationList list(Member member, boolean unreadOnly) {
-        store.closeExpiredPostings(); // 마감 시각이 지난 공고의 N-02 알림을 먼저 만든다
+        store.generateClosingSoonNotifications(); // 스케줄러 대신: N-02(마감), N-04(관심 공고 마감 임박)를 먼저 만든다
         List<Notification> all = store.notificationsOf(member.id);
         int unread = (int) all.stream().filter(n -> !n.read).count();
         List<NotificationItem> items = all.stream()
@@ -36,7 +36,7 @@ public class NotificationService {
     }
 
     public UnreadCount unreadCount(Member member) {
-        store.closeExpiredPostings();
+        store.generateClosingSoonNotifications();
         return new UnreadCount((int) store.notificationsOf(member.id).stream().filter(n -> !n.read).count());
     }
 

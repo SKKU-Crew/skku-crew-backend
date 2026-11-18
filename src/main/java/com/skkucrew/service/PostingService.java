@@ -187,6 +187,14 @@ public class PostingService {
         p.status = Boolean.FALSE.equals(req.publish()) ? PostingStatus.DRAFT : PostingStatus.OPEN;
         p.createdAt = Times.now();
         store.savePosting(p);
+        if (p.status == PostingStatus.OPEN && recruiter.type == MemberType.ORGANIZATION) {
+            // N-05 관심 조직 새 공고
+            for (Long followerId : store.followersOf(recruiter.id)) {
+                store.notify(followerId, com.skkucrew.domain.Codes.NotificationType.FOLLOWED_ORG_NEW_POSTING,
+                        "관심 조직 새 공고", recruiter.name + "이(가) '" + p.title + "'을(를) 게시했습니다.",
+                        "SCR-06", p.id, null);
+            }
+        }
         return detail(p.id, recruiter);
     }
 
@@ -244,7 +252,7 @@ public class PostingService {
         if (m.type == MemberType.PERSONAL) {
             dept = store.profile(m.id).map(pr -> pr.majorPrimary).orElse(null);
         }
-        return new RecruiterView(m.type, m.id, m.name, dept);
+        return new RecruiterView(m.type, m.id, m.name, dept, m.orgType, m.verified);
     }
 
     public PostingCard toCard(Posting p) {

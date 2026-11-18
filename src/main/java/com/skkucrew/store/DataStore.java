@@ -29,6 +29,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -55,6 +56,10 @@ public class DataStore {
     private final Map<Long, Notification> notifications = new ConcurrentHashMap<>();
     /** key: memberId:postingId */
     private final Map<String, ApplicationDraft> drafts = new ConcurrentHashMap<>();
+    /** 관심 조직 (FR-ORG): key memberId:orgId */
+    private final Set<String> follows = ConcurrentHashMap.newKeySet();
+    /** N-04를 이미 보낸 회원·공고 (memberId:postingId) */
+    private final Set<String> closingSoonNotified = ConcurrentHashMap.newKeySet();
     /** 지원서 중복 제출 방지 (FR-APPL-07): Idempotency-Key -> applicationId */
     private final Map<String, Long> idempotencyKeys = new ConcurrentHashMap<>();
 
@@ -84,6 +89,8 @@ public class DataStore {
         bookmarks.clear();
         notifications.clear();
         drafts.clear();
+        follows.clear();
+        closingSoonNotified.clear();
         idempotencyKeys.clear();
 
         OffsetDateTime now = Times.now();
@@ -148,6 +155,12 @@ public class DataStore {
                 n.createdAt = plusDays(now, -(n.createdDaysAgo == null ? 1.0 : n.createdDaysAgo));
             }
             notifications.put(n.id, n);
+            if (n.type == NotificationType.BOOKMARK_CLOSING_SOON && n.postingId != null) {
+                closingSoonNotified.add(n.memberId + ":" + n.postingId);
+            }
+        }
+        for (Follow f : read("follows.json", new TypeReference<List<Follow>>() {})) {
+            follows.add(f.memberId + ":" + f.orgId);
         }
         for (ApplicationDraft d : read("drafts.json", new TypeReference<List<ApplicationDraft>>() {})) {
             if (d.updatedAt == null) {
@@ -165,9 +178,9 @@ public class DataStore {
         notificationSeq.set(Math.max(20000, notifications.keySet().stream().mapToLong(Long::longValue).max().orElse(0)));
 
         log.info("Seed loaded: members={}, profiles={}, postings={}, applications={}, externalActivities={}, "
-                        + "bookmarks={}, notifications={}, drafts={}",
+                        + "bookmarks={}, notifications={}, drafts={}, follows={}",
                 members.size(), profiles.size(), postings.size(), applications.size(), externalActivities.size(),
-                bookmarks.size(), notifications.size(), drafts.size());
+                bookmarks.size(), notifications.size(), drafts.size(), follows.size());
     }
 
     private <T> List<T> read(String file, TypeReference<List<T>> type) {
@@ -353,6 +366,56 @@ public class DataStore {
         notify(p.recruiterId, NotificationType.POSTING_CLOSED, "모집이 마감되었어요",
                 "'" + p.title + "' 지원서 " + count + "건을 검토하고 결과를 발표해 주세요.", "SCR-12", p.id, null);
         drafts.values().removeIf(d -> d.postingId.equals(p.id));
+    }
+
+    /**
+     * N-04 관심 공고 마감 임박: 마감 24시간 이내인 모집중 공고를 관심 저장했지만 지원하지 않은 회원에게 한 번만 보낸다.
+     * 스케줄러 대신 알림을 조회할 때 호출한다.
+     */
+    public synchronized void generateClosingSoonNotifications() {
+        closeExpiredPostings();
+        OffsetDateTime now = Times.now();
+        OffsetDateTime limit = now.plusHours(24);
+        for (Bookmark b : bookmarks.values()) {
+            if (b.targetType != BookmarkTarget.POSTING) continue;
+            Posting p = postings.get(b.targetId);
+            if (p == null || p.status != PostingStatus.OPEN || p.deadline == null || p.deadline.isAfter(limit)) continue;
+            String key = b.memberId + ":" + p.id;
+            if (closingSoonNotified.contains(key)) continue;
+            boolean applied = applications.values().stream()
+                    .anyMatch(a -> a.postingId.equals(p.id) && a.applicantId.equals(b.memberId) && !a.withdrawn);
+            if (applied) continue;
+            closingSoonNotified.add(key);
+            notify(b.memberId, NotificationType.BOOKMARK_CLOSING_SOON, "관심 공고 마감 임박",
+                    "'" + p.title + "' 모집이 24시간 안에 마감됩니다. 아직 지원하지 않았어요.", "SCR-06", p.id, null);
+        }
+    }
+
+    // ---------------- Follow (관심 조직) ----------------
+
+    public static class Follow {
+        public Long memberId;
+        public Long orgId;
+    }
+
+    public boolean isFollowing(Long memberId, Long orgId) {
+        return memberId != null && follows.contains(memberId + ":" + orgId);
+    }
+
+    public void follow(Long memberId, Long orgId) {
+        follows.add(memberId + ":" + orgId);
+    }
+
+    public void unfollow(Long memberId, Long orgId) {
+        follows.remove(memberId + ":" + orgId);
+    }
+
+    public List<Long> followersOf(Long orgId) {
+        String suffix = ":" + orgId;
+        return follows.stream()
+                .filter(k -> k.endsWith(suffix))
+                .map(k -> Long.parseLong(k.substring(0, k.indexOf(':'))))
+                .toList();
     }
 
     // ---------------- Application draft ----------------

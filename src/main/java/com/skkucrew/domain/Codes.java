@@ -51,7 +51,7 @@ public final class Codes {
     /** 관심 저장 대상: 교내 공고, 외부 활동 (FR-SRCH-11, FR-EXT-11) */
     public enum BookmarkTarget { POSTING, EXTERNAL_ACTIVITY }
 
-    /** 알림 이벤트 (SRS 표 4-34). 데모에서는 N-01~N-04만 사용 */
+    /** 알림 이벤트 (SRS 표 4-34). 데모에서는 N-01~N-05만 사용 */
     public enum NotificationType {
         /** N-01 새 지원서 접수 → 모집자, SCR-12 */
         NEW_APPLICATION,
@@ -60,8 +60,13 @@ public final class Codes {
         /** N-03 선발 결과 발표 → 지원자, SCR-08 */
         RESULT_ANNOUNCED,
         /** N-04 관심 공고 마감 임박 → 관심 저장 후 미지원 회원, SCR-06 */
-        BOOKMARK_CLOSING_SOON
+        BOOKMARK_CLOSING_SOON,
+        /** N-05 관심 조직 새 공고 → 관심 조직 등록 회원, SCR-06 */
+        FOLLOWED_ORG_NEW_POSTING
     }
+
+    /** 지원자 목록 정렬: 제출순, 이름순 (FR-SEL-02) */
+    public enum ApplicantSort { SUBMITTED, NAME }
 
     /** 초안을 저장한 곳: 웹 임시저장, MCP(GPT) 초안 저장 도구 (FR-APPL-14) */
     public enum DraftSource { WEB, MCP }

@@ -78,7 +78,9 @@ public final class Dtos {
 
     // ---------------- 공고 ----------------
 
-    public record RecruiterView(MemberType type, Long memberId, String name, String department) {}
+    /** department: 개인회원의 주전공 / orgType·verified: 단체회원의 유형과 인증 배지 */
+    public record RecruiterView(MemberType type, Long memberId, String name, String department,
+                                String orgType, boolean verified) {}
 
     public record PostingCard(
             Long postingId,
@@ -306,4 +308,28 @@ public final class Dtos {
     public record NotificationList(int unreadCount, List<NotificationItem> items) {}
 
     public record UnreadCount(int unreadCount) {}
+
+    // ---------------- 조직 페이지 (FR-ORG-01) ----------------
+
+    public record OrgPage(
+            Long orgId,
+            String name,
+            String orgType,
+            boolean verified,
+            String logoUrl,
+            String intro,
+            List<Field> fields,
+            List<com.skkucrew.domain.Member.Link> links,
+            boolean followed,
+            int followerCount,
+            List<PostingCard> openPostings,
+            List<PostingCard> pastPostings
+    ) {}
+
+    public record FollowResponse(Long orgId, boolean followed, int followerCount) {}
+
+    // ---------------- 프로필 보조 ----------------
+
+    /** SKKU Crew 활동 이력 항목 공개 여부 (FR-PROF-09) */
+    public record HistoryVisibilityRequest(Boolean visible) {}
 }

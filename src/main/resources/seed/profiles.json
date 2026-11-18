@@ -3,33 +3,34 @@
     "memberId": 1,
     "majorPrimary": "소프트웨어학과",
     "majorsSecondary": [
-      "데이터사이언스융합전공"
+      "통계학과"
     ],
     "academicStatus": "GRADE_3",
-    "bio": "데이터로 문제를 푸는 백엔드 개발자",
+    "bio": "데이터로 문제를 푸는 개발자",
     "fields": [
       "DEV",
-      "DATA"
+      "DATA",
+      "AI"
     ],
     "skills": [
       {
         "id": 11,
-        "name": "Spring Boot",
+        "name": "Python",
         "level": "HIGH"
       },
       {
         "id": 12,
-        "name": "Java",
-        "level": "HIGH"
+        "name": "SQL",
+        "level": "MID"
       },
       {
         "id": 13,
-        "name": "Python",
+        "name": "Flutter",
         "level": "MID"
       },
       {
         "id": 14,
-        "name": "SQL",
+        "name": "Git",
         "level": "MID"
       }
     ],
@@ -37,14 +38,23 @@
       {
         "id": 21,
         "type": "PROJECT",
-        "title": "캠퍼스 중고거래 웹앱",
-        "role": "백엔드 개발",
+        "title": "교통 혼잡도 시각화 프로젝트",
+        "role": "데이터 분석·시각화",
         "startDate": "2026-03-02",
         "endDate": "2026-06-20",
-        "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+        "description": "서울시 교통량 공공데이터로 시간대별 혼잡도를 분석하고 지도 시각화를 만들었습니다."
       },
       {
         "id": 22,
+        "type": "PROJECT",
+        "title": "캠퍼스 중고거래 웹앱",
+        "role": "백엔드 개발",
+        "startDate": "2025-09-01",
+        "endDate": "2025-12-15",
+        "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+      },
+      {
+        "id": 23,
         "type": "AWARD",
         "title": "교내 해커톤 장려상",
         "role": "팀장",
@@ -58,18 +68,23 @@
         "id": 31,
         "title": "GitHub",
         "url": "https://github.com/example-minjun"
+      },
+      {
+        "id": 32,
+        "title": "기술 블로그",
+        "url": "https://example.com/blog/minjun"
       }
     ],
     "portfolioFiles": [
       {
         "id": 41,
-        "fileName": "portfolio_minjun.pdf",
+        "fileName": "포트폴리오.pdf",
         "url": "https://example.com/files/portfolio_minjun.pdf"
       }
     ],
     "contacts": {
-      "phone": "010-1234-5678",
-      "kakaoId": null,
+      "phone": null,
+      "kakaoId": "minjun_k",
       "personalEmail": null
     },
     "defaultShare": {
@@ -81,15 +96,15 @@
       "portfolioLinks": true,
       "portfolioFiles": false,
       "phone": false,
-      "kakaoId": false,
+      "kakaoId": true,
       "personalEmail": false
     },
     "activityHistory": [
       {
         "applicationId": 505,
         "postingId": 103,
-        "postingTitle": "캠퍼스 중고거래 웹앱 백엔드 개발자 모집",
-        "recruiterName": "정하늘",
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
         "announcedAt": null,
         "visible": true
       }
@@ -97,10 +112,10 @@
   },
   {
     "memberId": 2,
-    "majorPrimary": "통계학과",
+    "majorPrimary": "소프트웨어학과",
     "majorsSecondary": [],
     "academicStatus": "GRADE_2",
-    "bio": "R과 Python으로 데이터 분석을 공부하고 있어요",
+    "bio": "데이터 시각화로 이야기를 전하고 싶은 개발자",
     "fields": [
       "DATA",
       "AI"
@@ -109,42 +124,57 @@
       {
         "id": 51,
         "name": "Python",
-        "level": "MID"
-      },
-      {
-        "id": 52,
-        "name": "R",
         "level": "HIGH"
       },
       {
+        "id": 52,
+        "name": "SQL",
+        "level": "MID"
+      },
+      {
         "id": 53,
-        "name": "Pandas",
+        "name": "Tableau",
         "level": "MID"
       }
     ],
     "experiences": [
       {
         "id": 54,
-        "type": "EXTRACURRICULAR",
-        "title": "통계 분석 대외활동",
-        "role": "데이터 전처리",
+        "type": "AWARD",
+        "title": "학과 데이터 시각화 대회 장려상",
+        "role": "시각화",
+        "startDate": "2026-05-10",
+        "endDate": "2026-05-24",
+        "description": "대중교통 이용 데이터를 Tableau 대시보드로 정리했습니다."
+      },
+      {
+        "id": 55,
+        "type": "PROJECT",
+        "title": "오픈소스 데이터 정제 스크립트 기여",
+        "role": "컨트리뷰터",
         "startDate": "2026-07-01",
-        "endDate": "2026-08-31",
-        "description": "설문 데이터를 정제하고 시각화했습니다."
+        "endDate": null,
+        "description": "공공데이터 CSV 정제 도구에 결측치 처리 기능을 기여하고 있습니다."
       }
     ],
     "portfolioLinks": [
       {
-        "id": 55,
-        "title": "블로그",
-        "url": "https://example.com/blog/seoyeon"
+        "id": 56,
+        "title": "GitHub",
+        "url": "https://github.com/example-seoyeon"
       }
     ],
-    "portfolioFiles": [],
+    "portfolioFiles": [
+      {
+        "id": 57,
+        "fileName": "포트폴리오.pdf",
+        "url": "https://example.com/files/portfolio_seoyeon.pdf"
+      }
+    ],
     "contacts": {
       "phone": "010-2345-6789",
       "kakaoId": "seoyeon_data",
-      "personalEmail": "seoyeon@example.com"
+      "personalEmail": null
     },
     "defaultShare": {
       "profileImage": false,
@@ -153,12 +183,21 @@
       "skills": true,
       "experiences": true,
       "portfolioLinks": true,
-      "portfolioFiles": false,
-      "phone": true,
-      "kakaoId": false,
+      "portfolioFiles": true,
+      "phone": false,
+      "kakaoId": true,
       "personalEmail": false
     },
-    "activityHistory": []
+    "activityHistory": [
+      {
+        "applicationId": 511,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
   },
   {
     "memberId": 3,
@@ -180,11 +219,16 @@
         "id": 62,
         "name": "Illustrator",
         "level": "MID"
+      },
+      {
+        "id": 63,
+        "name": "Excel",
+        "level": "LOW"
       }
     ],
     "experiences": [
       {
-        "id": 63,
+        "id": 64,
         "type": "PROJECT",
         "title": "학과 전시 웹사이트 디자인",
         "role": "UI 디자인",
@@ -195,7 +239,7 @@
     ],
     "portfolioLinks": [
       {
-        "id": 64,
+        "id": 65,
         "title": "Behance",
         "url": "https://example.com/behance/yujin"
       }
@@ -218,7 +262,16 @@
       "kakaoId": true,
       "personalEmail": false
     },
-    "activityHistory": []
+    "activityHistory": [
+      {
+        "applicationId": 512,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
   },
   {
     "memberId": 4,
@@ -254,7 +307,7 @@
     "portfolioFiles": [],
     "contacts": {
       "phone": "010-4567-8901",
-      "kakaoId": "jihoon_stat",
+      "kakaoId": "jiho_stat",
       "personalEmail": null
     },
     "defaultShare": {
@@ -273,29 +326,24 @@
   },
   {
     "memberId": 5,
-    "majorPrimary": "소프트웨어학과",
+    "majorPrimary": "경영학과",
     "majorsSecondary": [],
     "academicStatus": "GRADE_4",
-    "bio": "웹·앱 서비스를 만드는 풀스택 개발자",
+    "bio": "금융 데이터와 전략 기획에 관심 많은 경영학도",
     "fields": [
-      "DEV",
-      "DESIGN"
+      "FINANCE",
+      "DATA"
     ],
     "skills": [
       {
         "id": 81,
-        "name": "Flutter",
+        "name": "Excel",
         "level": "HIGH"
       },
       {
         "id": 82,
-        "name": "Spring Boot",
+        "name": "Python",
         "level": "MID"
-      },
-      {
-        "id": 83,
-        "name": "Figma",
-        "level": "LOW"
       }
     ],
     "experiences": [],
@@ -303,7 +351,7 @@
     "portfolioFiles": [],
     "contacts": {
       "phone": null,
-      "kakaoId": null,
+      "kakaoId": "haneul_fin",
       "personalEmail": null
     },
     "defaultShare": {
@@ -412,5 +460,1053 @@
       "personalEmail": false
     },
     "activityHistory": []
+  },
+  {
+    "memberId": 11,
+    "majorPrimary": "데이터사이언스융합전공",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "데이터 파이프라인을 만드는 데이터 엔지니어 지망생",
+    "fields": [
+      "AI",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 111,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 112,
+        "name": "SQL",
+        "level": "HIGH"
+      },
+      {
+        "id": 113,
+        "name": "Docker",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "doyoon_de",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 514,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 12,
+    "majorPrimary": "통계학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_1",
+    "bio": "통계학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 201,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 202,
+        "name": "R",
+        "level": "MID"
+      },
+      {
+        "id": 203,
+        "name": "SQL",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user12_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 13,
+    "majorPrimary": "경영학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "경영학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "FINANCE"
+    ],
+    "skills": [
+      {
+        "id": 204,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 205,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 206,
+        "name": "Tableau",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user13_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 516,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 14,
+    "majorPrimary": "소프트웨어학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "소프트웨어학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DEV",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 207,
+        "name": "Python",
+        "level": "LOW"
+      },
+      {
+        "id": 208,
+        "name": "Java",
+        "level": "HIGH"
+      },
+      {
+        "id": 209,
+        "name": "PyTorch",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 517,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 15,
+    "majorPrimary": "경제학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "경제학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "FINANCE",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 210,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 211,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 212,
+        "name": "R",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user15_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 16,
+    "majorPrimary": "수학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "수학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "AI",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 213,
+        "name": "Python",
+        "level": "MID"
+      },
+      {
+        "id": 214,
+        "name": "NumPy",
+        "level": "LOW"
+      },
+      {
+        "id": 215,
+        "name": "scikit-learn",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user16_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 519,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 17,
+    "majorPrimary": "산업공학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_4",
+    "bio": "산업공학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "PLANNING_MARKETING"
+    ],
+    "skills": [
+      {
+        "id": 216,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 217,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 218,
+        "name": "Power BI",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 520,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 18,
+    "majorPrimary": "통계학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_1",
+    "bio": "통계학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 219,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 220,
+        "name": "R",
+        "level": "MID"
+      },
+      {
+        "id": 221,
+        "name": "SQL",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user18_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 521,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 19,
+    "majorPrimary": "경영학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "경영학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "FINANCE"
+    ],
+    "skills": [
+      {
+        "id": 222,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 223,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 224,
+        "name": "Tableau",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user19_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 522,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 20,
+    "majorPrimary": "소프트웨어학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "소프트웨어학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DEV",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 225,
+        "name": "Python",
+        "level": "LOW"
+      },
+      {
+        "id": 226,
+        "name": "Java",
+        "level": "HIGH"
+      },
+      {
+        "id": 227,
+        "name": "PyTorch",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 21,
+    "majorPrimary": "경제학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "경제학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "FINANCE",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 228,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 229,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 230,
+        "name": "R",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user21_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 524,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 22,
+    "majorPrimary": "수학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "수학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "AI",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 231,
+        "name": "Python",
+        "level": "MID"
+      },
+      {
+        "id": 232,
+        "name": "NumPy",
+        "level": "LOW"
+      },
+      {
+        "id": 233,
+        "name": "scikit-learn",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user22_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 23,
+    "majorPrimary": "산업공학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_4",
+    "bio": "산업공학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "PLANNING_MARKETING"
+    ],
+    "skills": [
+      {
+        "id": 234,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 235,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 236,
+        "name": "Power BI",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 526,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 24,
+    "majorPrimary": "통계학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_1",
+    "bio": "통계학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 237,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 238,
+        "name": "R",
+        "level": "MID"
+      },
+      {
+        "id": 239,
+        "name": "SQL",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user24_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 527,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 25,
+    "majorPrimary": "경영학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "경영학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "FINANCE"
+    ],
+    "skills": [
+      {
+        "id": 240,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 241,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 242,
+        "name": "Tableau",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user25_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 528,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 26,
+    "majorPrimary": "소프트웨어학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_2",
+    "bio": "소프트웨어학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DEV",
+      "AI"
+    ],
+    "skills": [
+      {
+        "id": 243,
+        "name": "Python",
+        "level": "LOW"
+      },
+      {
+        "id": 244,
+        "name": "Java",
+        "level": "HIGH"
+      },
+      {
+        "id": 245,
+        "name": "PyTorch",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 27,
+    "majorPrimary": "경제학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "경제학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "FINANCE",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 246,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 247,
+        "name": "Excel",
+        "level": "MID"
+      },
+      {
+        "id": 248,
+        "name": "R",
+        "level": "LOW"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user27_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": []
+  },
+  {
+    "memberId": 28,
+    "majorPrimary": "수학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_3",
+    "bio": "수학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "AI",
+      "DATA"
+    ],
+    "skills": [
+      {
+        "id": 249,
+        "name": "Python",
+        "level": "MID"
+      },
+      {
+        "id": 250,
+        "name": "NumPy",
+        "level": "LOW"
+      },
+      {
+        "id": 251,
+        "name": "scikit-learn",
+        "level": "HIGH"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": "user28_k",
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": true,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 531,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "memberId": 29,
+    "majorPrimary": "산업공학과",
+    "majorsSecondary": [],
+    "academicStatus": "GRADE_4",
+    "bio": "산업공학과에서 데이터 분석을 공부하고 있어요",
+    "fields": [
+      "DATA",
+      "PLANNING_MARKETING"
+    ],
+    "skills": [
+      {
+        "id": 252,
+        "name": "SQL",
+        "level": "LOW"
+      },
+      {
+        "id": 253,
+        "name": "Python",
+        "level": "HIGH"
+      },
+      {
+        "id": 254,
+        "name": "Power BI",
+        "level": "MID"
+      }
+    ],
+    "experiences": [],
+    "portfolioLinks": [],
+    "portfolioFiles": [],
+    "contacts": {
+      "phone": null,
+      "kakaoId": null,
+      "personalEmail": null
+    },
+    "defaultShare": {
+      "profileImage": false,
+      "bio": true,
+      "majorsSecondary": true,
+      "skills": true,
+      "experiences": true,
+      "portfolioLinks": true,
+      "portfolioFiles": false,
+      "phone": false,
+      "kakaoId": false,
+      "personalEmail": false
+    },
+    "activityHistory": [
+      {
+        "applicationId": 532,
+        "postingId": 103,
+        "postingTitle": "데이터 분석 학회 D:LAB 27기 모집",
+        "recruiterName": "데이터 분석 학회 D:LAB",
+        "announcedAt": null,
+        "visible": true
+      }
+    ]
   }
 ]

@@ -31,7 +31,7 @@ public class ExternalActivityService {
 
     /** 유형·분야·키워드 검색, 기본 정렬은 마감 임박순 (FR-EXT-07). 마감 지난 항목은 제외 (FR-EXT-06). */
     public PageResponse<ExternalActivityItem> search(String keyword, ExternalType type, List<Field> fields,
-                                                     SortType sort, int page, int size, Member viewer) {
+                                                     String source, SortType sort, int page, int size, Member viewer) {
         String kw = keyword == null || keyword.isBlank() ? null : keyword.trim().toLowerCase(Locale.ROOT);
         Comparator<ExternalActivity> order = (sort == SortType.LATEST)
                 ? Comparator.comparing((ExternalActivity e) -> e.postedAt).reversed()
@@ -39,6 +39,7 @@ public class ExternalActivityService {
         List<ExternalActivityItem> list = store.allExternalActivities().stream()
                 .filter(this::isVisible)
                 .filter(e -> type == null || e.type == type)
+                .filter(e -> source == null || source.isBlank() || source.equalsIgnoreCase(e.source))
                 .filter(e -> fields == null || fields.isEmpty() || e.fields.stream().anyMatch(fields::contains))
                 .filter(e -> kw == null
                         || (e.title != null && e.title.toLowerCase(Locale.ROOT).contains(kw))

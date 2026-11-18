@@ -2,7 +2,13 @@
   {
     "memberId": 1,
     "targetType": "POSTING",
-    "targetId": 101,
+    "targetId": 119,
+    "createdDaysAgo": 0.5
+  },
+  {
+    "memberId": 1,
+    "targetType": "POSTING",
+    "targetId": 120,
     "createdDaysAgo": 2
   },
   {
@@ -10,12 +16,6 @@
     "targetType": "POSTING",
     "targetId": 106,
     "createdDaysAgo": 1
-  },
-  {
-    "memberId": 1,
-    "targetType": "POSTING",
-    "targetId": 111,
-    "createdDaysAgo": 0.5
   },
   {
     "memberId": 1,
@@ -33,7 +33,7 @@
     "memberId": 2,
     "targetType": "POSTING",
     "targetId": 104,
-    "createdDaysAgo": 2.5
+    "createdDaysAgo": 0.8
   },
   {
     "memberId": 2,
