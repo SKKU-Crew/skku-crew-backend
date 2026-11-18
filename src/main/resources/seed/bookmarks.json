@@ -1,0 +1,56 @@
+[
+  {
+    "memberId": 1,
+    "targetType": "POSTING",
+    "targetId": 101,
+    "createdDaysAgo": 2
+  },
+  {
+    "memberId": 1,
+    "targetType": "POSTING",
+    "targetId": 106,
+    "createdDaysAgo": 1
+  },
+  {
+    "memberId": 1,
+    "targetType": "POSTING",
+    "targetId": 111,
+    "createdDaysAgo": 0.5
+  },
+  {
+    "memberId": 1,
+    "targetType": "EXTERNAL_ACTIVITY",
+    "targetId": 2,
+    "createdDaysAgo": 3
+  },
+  {
+    "memberId": 1,
+    "targetType": "EXTERNAL_ACTIVITY",
+    "targetId": 5,
+    "createdDaysAgo": 1
+  },
+  {
+    "memberId": 2,
+    "targetType": "POSTING",
+    "targetId": 104,
+    "createdDaysAgo": 2.5
+  },
+  {
+    "memberId": 2,
+    "targetType": "EXTERNAL_ACTIVITY",
+    "targetId": 1,
+    "createdDaysAgo": 4
+  },
+  {
+    "memberId": 3,
+    "targetType": "POSTING",
+    "targetId": 106,
+    "createdDaysAgo": 1.2
+  },
+  {
+    "memberId": 3,
+    "targetType": "EXTERNAL_ACTIVITY",
+    "targetId": 6,
+    "createdDaysAgo": 2
+  }
+]

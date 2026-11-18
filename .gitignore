@@ -1,0 +1,17 @@
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+bin/
+
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+.DS_Store
+Thumbs.db
+
+# 전달용 압축 파일
+*.tar.gz

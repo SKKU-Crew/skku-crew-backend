@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "type": "CONTEST",
+    "title": "2026 공공데이터 활용 아이디어 공모전 (예시)",
+    "organizer": "공공데이터 진흥기관(예시)",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 5,
+    "deadlineDaysFromNow": 20,
+    "url": "https://example.com/external/1"
+  },
+  {
+    "id": 2,
+    "type": "INTERN_JOB",
+    "title": "겨울방학 데이터 분석 인턴 모집 (예시)",
+    "organizer": "소프트웨어학과",
+    "fields": [
+      "DATA"
+    ],
+    "source": "SKKU_NOTICE",
+    "postedDaysAgo": 3,
+    "deadlineDaysFromNow": 7,
+    "url": "https://example.com/external/2"
+  },
+  {
+    "id": 3,
+    "type": "EDUCATION",
+    "title": "AI 개발자 양성 부트캠프 4기 (예시)",
+    "organizer": "청년 디지털 인재 지원기관(예시)",
+    "fields": [
+      "AI",
+      "DEV"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 10,
+    "deadlineDaysFromNow": 14,
+    "url": "https://example.com/external/3"
+  },
+  {
+    "id": 4,
+    "type": "EXTRACURRICULAR",
+    "title": "대학생 금융 서포터즈 모집 (예시)",
+    "organizer": "금융 교육기관(예시)",
+    "fields": [
+      "FINANCE",
+      "PLANNING_MARKETING"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 2,
+    "deadlineDaysFromNow": 10,
+    "url": "https://example.com/external/4"
+  },
+  {
+    "id": 5,
+    "type": "RESEARCH_PROGRAM",
+    "title": "학부생 연구 참여 프로그램 겨울학기 모집 (예시)",
+    "organizer": "소프트웨어융합대학",
+    "fields": [
+      "AI",
+      "DEV"
+    ],
+    "source": "SKKU_NOTICE",
+    "postedDaysAgo": 6,
+    "deadlineDaysFromNow": 5,
+    "url": "https://example.com/external/5"
+  },
+  {
+    "id": 6,
+    "type": "CONTEST",
+    "title": "대학생 UX/UI 디자인 공모전 (예시)",
+    "organizer": "디자인 진흥기관(예시)",
+    "fields": [
+      "DESIGN"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 8,
+    "deadlineDaysFromNow": 25,
+    "url": "https://example.com/external/6"
+  },
+  {
+    "id": 7,
+    "type": "EDUCATION",
+    "title": "클라우드 실무 교육 과정 (예시)",
+    "organizer": "IT 교육센터(예시)",
+    "fields": [
+      "DEV"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 1,
+    "deadlineDaysFromNow": null,
+    "url": "https://example.com/external/7"
+  },
+  {
+    "id": 8,
+    "type": "INTERN_JOB",
+    "title": "스타트업 마케팅 인턴 연계 프로그램 (예시)",
+    "organizer": "창업지원단",
+    "fields": [
+      "PLANNING_MARKETING"
+    ],
+    "source": "SKKU_NOTICE",
+    "postedDaysAgo": 4,
+    "deadlineDaysFromNow": 9,
+    "url": "https://example.com/external/8"
+  },
+  {
+    "id": 9,
+    "type": "EXTRACURRICULAR",
+    "title": "청년 정책 기자단 모집 (예시)",
+    "organizer": "청년 정책 기관(예시)",
+    "fields": [
+      "ETC",
+      "PLANNING_MARKETING"
+    ],
+    "source": "PUBLIC_API",
+    "postedDaysAgo": 7,
+    "deadlineDaysFromNow": 3,
+    "url": "https://example.com/external/9"
+  },
+  {
+    "id": 10,
+    "type": "CONTEST",
+    "title": "캡스톤 디자인 경진대회 참가 안내 (예시)",
+    "organizer": "공학교육혁신센터",
+    "fields": [
+      "DEV",
+      "DESIGN"
+    ],
+    "source": "SKKU_NOTICE",
+    "postedDaysAgo": 9,
+    "deadlineDaysFromNow": 18,
+    "url": "https://example.com/external/10"
+  }
+]

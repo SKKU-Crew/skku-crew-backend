@@ -1,0 +1,666 @@
+[
+  {
+    "id": 101,
+    "recruiterId": 4,
+    "category": "CONTEST",
+    "title": "2026 공공데이터 활용 공모전 데이터 분석 팀원 모집",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "capacity": 3,
+    "deadlineDaysFromNow": 5,
+    "activityStart": "2026-12-07",
+    "activityEnd": "2027-01-31",
+    "activityMode": "HYBRID",
+    "place": "자연과학캠퍼스 디지털도서관",
+    "skills": [
+      "Python",
+      "SQL",
+      "Pandas"
+    ],
+    "description": "공공데이터포털의 교통·인구 데이터를 활용해 지역 문제를 분석하는 공모전에 함께할 팀원을 찾습니다. 데이터 전처리와 시각화를 함께 맡아 주실 분을 우대합니다. 결과물은 분석 보고서와 대시보드입니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1001,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      },
+      {
+        "id": 1002,
+        "order": 2,
+        "type": "SINGLE_CHOICE",
+        "content": "주 1회 오프라인 회의(자연과학캠퍼스)에 참석할 수 있나요?",
+        "required": true,
+        "maxLength": null,
+        "options": [
+          "가능",
+          "어려움"
+        ]
+      },
+      {
+        "id": 1003,
+        "order": 3,
+        "type": "SHORT_TEXT",
+        "content": "참고할 GitHub나 노션 주소가 있다면 적어 주세요.",
+        "required": false,
+        "maxLength": null,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "PHONE",
+      "KAKAO_ID"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 2
+  },
+  {
+    "id": 102,
+    "recruiterId": 4,
+    "category": "STUDY",
+    "title": "SQL 코딩테스트 대비 스터디원 모집 (주 2회)",
+    "fields": [
+      "DATA",
+      "DEV"
+    ],
+    "capacity": 4,
+    "deadlineDaysFromNow": -2,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "SQL"
+    ],
+    "description": "프로그래머스 SQL 고득점 Kit을 4주 동안 함께 풉니다. 매주 화·목 저녁 9시 온라인으로 진행합니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1004,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [],
+    "status": "CLOSED",
+    "createdDaysAgo": 12
+  },
+  {
+    "id": 103,
+    "recruiterId": 5,
+    "category": "PROJECT",
+    "title": "캠퍼스 중고거래 웹앱 백엔드 개발자 모집",
+    "fields": [
+      "DEV"
+    ],
+    "capacity": 2,
+    "deadlineDaysFromNow": -14,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "OFFLINE",
+    "place": "율전 제2공학관",
+    "skills": [
+      "Spring Boot",
+      "MySQL"
+    ],
+    "description": "학교 구성원끼리 안전하게 거래하는 중고거래 웹앱을 만듭니다. 백엔드 API와 DB 설계를 함께할 분을 찾습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1005,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "PHONE"
+    ],
+    "status": "ANNOUNCED",
+    "createdDaysAgo": 30,
+    "announcedDaysAgo": 10,
+    "acceptMessage": "합격을 축하합니다! 첫 회의는 다음 주 월요일 저녁 7시입니다. 곧 연락드릴게요.",
+    "rejectMessage": null
+  },
+  {
+    "id": 104,
+    "recruiterId": 6,
+    "category": "CLUB",
+    "title": "D:LAB 데이터 분석 학회 27기 신입 학회원 모집",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "capacity": 15,
+    "deadlineDaysFromNow": 2.5,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "OFFLINE",
+    "place": "자연과학캠퍼스 학생회관",
+    "skills": [
+      "Python",
+      "SQL"
+    ],
+    "description": "D:LAB은 데이터 분석과 머신러닝을 공부하는 학회입니다. 매주 세션과 학기말 프로젝트 발표가 있습니다. 전공과 학년에 관계없이 지원할 수 있습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1006,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      },
+      {
+        "id": 1007,
+        "order": 2,
+        "type": "MULTI_CHOICE",
+        "content": "관심 있는 세션을 모두 골라 주세요.",
+        "required": true,
+        "maxLength": null,
+        "options": [
+          "데이터 시각화",
+          "머신러닝",
+          "딥러닝",
+          "SQL·데이터 엔지니어링"
+        ]
+      }
+    ],
+    "requestedContacts": [
+      "SCHOOL_EMAIL"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 6
+  },
+  {
+    "id": 105,
+    "recruiterId": 7,
+    "category": "CLUB",
+    "title": "로봇 학회 R:BOT 신입 부원 모집",
+    "fields": [
+      "DEV",
+      "ETC"
+    ],
+    "capacity": 10,
+    "deadlineDaysFromNow": 1.5,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "OFFLINE",
+    "place": "율전 제1공학관",
+    "skills": [
+      "C++",
+      "ROS"
+    ],
+    "description": "R:BOT은 자율주행 로봇과 임베디드 시스템을 다루는 학회입니다. 하드웨어 경험이 없어도 괜찮습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1008,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 8
+  },
+  {
+    "id": 106,
+    "recruiterId": 5,
+    "category": "PROJECT",
+    "title": "Flutter 캠퍼스 앱 프론트엔드 팀원 모집",
+    "fields": [
+      "DEV",
+      "DESIGN"
+    ],
+    "capacity": 2,
+    "deadlineDaysFromNow": 9,
+    "activityStart": "2026-12-15",
+    "activityEnd": "2027-02-28",
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Figma"
+    ],
+    "description": "학식 메뉴와 셔틀 시간을 한 번에 보는 캠퍼스 앱을 Flutter로 만듭니다. 화면 개발을 함께할 분을 찾습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1009,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      },
+      {
+        "id": 1010,
+        "order": 2,
+        "type": "SINGLE_CHOICE",
+        "content": "Flutter 사용 경험이 있나요?",
+        "required": true,
+        "maxLength": null,
+        "options": [
+          "있음",
+          "없음(배우면서 참여)"
+        ]
+      }
+    ],
+    "requestedContacts": [
+      "SCHOOL_EMAIL"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 1
+  },
+  {
+    "id": 107,
+    "recruiterId": 2,
+    "category": "STUDY",
+    "title": "R로 배우는 통계 기초 스터디",
+    "fields": [
+      "DATA"
+    ],
+    "capacity": 5,
+    "deadlineDaysFromNow": 6,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "R"
+    ],
+    "description": "통계학 입문 교재를 R 실습과 함께 6주간 공부합니다. 비전공자도 환영합니다.",
+    "imageUrl": null,
+    "questions": [],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 4
+  },
+  {
+    "id": 108,
+    "recruiterId": 6,
+    "category": "RESEARCH",
+    "title": "D:LAB 추천시스템 연구 프로젝트 참여자 모집",
+    "fields": [
+      "AI",
+      "DATA"
+    ],
+    "capacity": 4,
+    "deadlineDaysFromNow": 12,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "HYBRID",
+    "place": "자연과학캠퍼스",
+    "skills": [
+      "Python",
+      "PyTorch"
+    ],
+    "description": "학회 내부 연구 프로젝트로 대학생 활동 추천 모델을 실험합니다. 논문 스터디와 실험을 함께할 분을 찾습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1011,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "SCHOOL_EMAIL",
+      "PHONE"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 5
+  },
+  {
+    "id": 109,
+    "recruiterId": 3,
+    "category": "CONTEST",
+    "title": "UX 디자인 공모전 함께할 개발자 1명",
+    "fields": [
+      "DESIGN",
+      "DEV"
+    ],
+    "capacity": 1,
+    "deadlineDaysFromNow": 4,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "React",
+      "Figma"
+    ],
+    "description": "디자인은 준비되어 있고, 프로토타입을 웹으로 구현해 줄 개발자 한 분을 찾습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1012,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "KAKAO_ID"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 3
+  },
+  {
+    "id": 110,
+    "recruiterId": 5,
+    "category": "STUDY",
+    "title": "알고리즘 스터디 (백준 골드 목표)",
+    "fields": [
+      "DEV"
+    ],
+    "capacity": 6,
+    "deadlineDaysFromNow": 2,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "C++",
+      "Java",
+      "Python"
+    ],
+    "description": "매주 문제 5개를 풀고 일요일에 코드 리뷰를 합니다.",
+    "imageUrl": null,
+    "questions": [],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 7
+  },
+  {
+    "id": 111,
+    "recruiterId": 7,
+    "category": "CONTEST",
+    "title": "자율주행 로봇 경진대회 소프트웨어 파트 모집",
+    "fields": [
+      "AI",
+      "DEV"
+    ],
+    "capacity": 3,
+    "deadlineDaysFromNow": 8,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "OFFLINE",
+    "place": "율전 제1공학관",
+    "skills": [
+      "Python",
+      "ROS",
+      "OpenCV"
+    ],
+    "description": "대학생 자율주행 로봇 경진대회에 나갈 팀의 인지·제어 소프트웨어 담당을 모집합니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1013,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "PHONE"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 2
+  },
+  {
+    "id": 112,
+    "recruiterId": 4,
+    "category": "PROJECT",
+    "title": "주식 데이터 대시보드 사이드 프로젝트",
+    "fields": [
+      "FINANCE",
+      "DATA",
+      "DEV"
+    ],
+    "capacity": 3,
+    "deadlineDaysFromNow": 10,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Python",
+      "Streamlit"
+    ],
+    "description": "공개 주가 데이터로 개인 투자 대시보드를 만드는 사이드 프로젝트입니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1014,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 4
+  },
+  {
+    "id": 113,
+    "recruiterId": 10,
+    "category": "CONTEST",
+    "title": "대학생 마케팅 공모전 기획 팀원 모집",
+    "fields": [
+      "PLANNING_MARKETING",
+      "DESIGN"
+    ],
+    "capacity": 3,
+    "deadlineDaysFromNow": 7,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "HYBRID",
+    "place": "인문사회과학캠퍼스",
+    "skills": [
+      "Notion",
+      "Canva"
+    ],
+    "description": "브랜드 캠페인 기획 공모전에 함께 나갈 기획·디자인 팀원을 찾습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1015,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "KAKAO_ID"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 2
+  },
+  {
+    "id": 114,
+    "recruiterId": 9,
+    "category": "STUDY",
+    "title": "Spring Boot 입문 스터디",
+    "fields": [
+      "DEV"
+    ],
+    "capacity": 5,
+    "deadlineDaysFromNow": 11,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Java",
+      "Spring Boot"
+    ],
+    "description": "스프링 입문서를 함께 읽고 간단한 게시판 API를 만들어 봅니다.",
+    "imageUrl": null,
+    "questions": [],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 1
+  },
+  {
+    "id": 115,
+    "recruiterId": 6,
+    "category": "STUDY",
+    "title": "D:LAB 캐글 스터디 외부 참여자 모집",
+    "fields": [
+      "DATA",
+      "AI"
+    ],
+    "capacity": 6,
+    "deadlineDaysFromNow": 5,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Python",
+      "scikit-learn"
+    ],
+    "description": "캐글 입문 대회를 함께 풀어 보는 스터디입니다. 학회원이 아니어도 참여할 수 있습니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1016,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 3
+  },
+  {
+    "id": 116,
+    "recruiterId": 10,
+    "category": "PROJECT",
+    "title": "교내 동아리 홍보 영상 제작 팀",
+    "fields": [
+      "DESIGN",
+      "PLANNING_MARKETING"
+    ],
+    "capacity": 2,
+    "deadlineDaysFromNow": 13,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Premiere Pro"
+    ],
+    "description": "동아리 박람회용 홍보 영상을 기획부터 편집까지 함께 만듭니다.",
+    "imageUrl": null,
+    "questions": [],
+    "requestedContacts": [],
+    "status": "OPEN",
+    "createdDaysAgo": 1
+  },
+  {
+    "id": 117,
+    "recruiterId": 5,
+    "category": "PROJECT",
+    "title": "졸업작품 팀원 모집 (작성 중)",
+    "fields": [
+      "DEV"
+    ],
+    "capacity": 2,
+    "deadlineDaysFromNow": 20,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "OFFLINE",
+    "place": null,
+    "skills": [
+      "Spring Boot"
+    ],
+    "description": "아직 작성 중인 공고입니다.",
+    "imageUrl": null,
+    "questions": [],
+    "requestedContacts": [],
+    "status": "DRAFT",
+    "createdDaysAgo": 0.5
+  },
+  {
+    "id": 118,
+    "recruiterId": 2,
+    "category": "CONTEST",
+    "title": "금융 데이터 분석 경진대회 팀원 모집",
+    "fields": [
+      "FINANCE",
+      "DATA"
+    ],
+    "capacity": 2,
+    "deadlineDaysFromNow": 3.5,
+    "activityStart": null,
+    "activityEnd": null,
+    "activityMode": "ONLINE",
+    "place": null,
+    "skills": [
+      "Python",
+      "SQL"
+    ],
+    "description": "카드 소비 데이터로 고객 세그먼트를 분석하는 경진대회입니다.",
+    "imageUrl": null,
+    "questions": [
+      {
+        "id": 1017,
+        "order": 1,
+        "type": "LONG_TEXT",
+        "content": "지원 동기를 적어 주세요.",
+        "required": true,
+        "maxLength": 500,
+        "options": null
+      }
+    ],
+    "requestedContacts": [
+      "PHONE"
+    ],
+    "status": "OPEN",
+    "createdDaysAgo": 2
+  }
+]

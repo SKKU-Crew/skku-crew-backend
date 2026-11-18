@@ -1,0 +1,707 @@
+[
+  {
+    "id": 501,
+    "postingId": 101,
+    "applicantId": 2,
+    "snapshot": {
+      "name": "이서연",
+      "majorPrimary": "통계학과",
+      "academicStatus": "GRADE_2",
+      "fields": [
+        "DATA",
+        "AI"
+      ],
+      "bio": "R과 Python으로 데이터 분석을 공부하고 있어요",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "R",
+          "level": "HIGH"
+        },
+        {
+          "name": "Pandas",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "EXTRACURRICULAR",
+          "title": "통계 분석 대외활동",
+          "role": "데이터 전처리",
+          "startDate": "2026-07-01",
+          "endDate": "2026-08-31",
+          "description": "설문 데이터를 정제하고 시각화했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "블로그",
+          "url": "https://example.com/blog/seoyeon"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:54",
+      "portfolioLink:55",
+      "contact:PHONE",
+      "contact:KAKAO_ID"
+    ],
+    "contacts": [
+      {
+        "type": "PHONE",
+        "value": "010-2345-6789",
+        "consent": true
+      },
+      {
+        "type": "KAKAO_ID",
+        "value": "seoyeon_data",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1001,
+        "value": "통계학과에서 배운 회귀 분석을 실제 공공데이터에 적용해 보고 싶어 지원했습니다. R과 Python 모두 다룰 수 있습니다."
+      },
+      {
+        "questionId": 1002,
+        "value": "가능"
+      },
+      {
+        "questionId": 1003,
+        "value": "https://example.com/blog/seoyeon"
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": "R 실력 좋음, 시각화 담당 후보",
+    "submittedDaysAgo": 1.5
+  },
+  {
+    "id": 502,
+    "postingId": 101,
+    "applicantId": 3,
+    "snapshot": {
+      "name": "최유진",
+      "majorPrimary": "디자인학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "DESIGN",
+        "PLANNING_MARKETING"
+      ],
+      "bio": "사용자 경험을 고민하는 UX 디자이너",
+      "skills": [
+        {
+          "name": "Figma",
+          "level": "HIGH"
+        },
+        {
+          "name": "Illustrator",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "PROJECT",
+          "title": "학과 전시 웹사이트 디자인",
+          "role": "UI 디자인",
+          "startDate": "2026-04-01",
+          "endDate": "2026-05-30",
+          "description": "전시 안내 웹사이트의 화면을 설계했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "Behance",
+          "url": "https://example.com/behance/yujin"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:63",
+      "portfolioLink:64",
+      "contact:PHONE",
+      "contact:KAKAO_ID"
+    ],
+    "contacts": [
+      {
+        "type": "PHONE",
+        "value": "010-3456-7890",
+        "consent": true
+      },
+      {
+        "type": "KAKAO_ID",
+        "value": "yujin_ux",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1001,
+        "value": "분석 결과를 대시보드로 보기 좋게 정리하는 역할을 맡고 싶습니다. Figma로 화면 설계가 가능합니다."
+      },
+      {
+        "questionId": 1002,
+        "value": "어려움"
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 0.8
+  },
+  {
+    "id": 503,
+    "postingId": 102,
+    "applicantId": 1,
+    "snapshot": {
+      "name": "김민준",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "DEV",
+        "DATA"
+      ],
+      "bio": "데이터로 문제를 푸는 백엔드 개발자",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "level": "HIGH"
+        },
+        {
+          "name": "Java",
+          "level": "HIGH"
+        },
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "SQL",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "PROJECT",
+          "title": "캠퍼스 중고거래 웹앱",
+          "role": "백엔드 개발",
+          "startDate": "2026-03-02",
+          "endDate": "2026-06-20",
+          "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+        },
+        {
+          "type": "AWARD",
+          "title": "교내 해커톤 장려상",
+          "role": "팀장",
+          "startDate": "2025-11-15",
+          "endDate": "2025-11-16",
+          "description": "공공 데이터를 활용한 캠퍼스 안내 서비스로 수상했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-minjun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:21",
+      "experience:22",
+      "portfolioLink:31"
+    ],
+    "contacts": [],
+    "answers": [
+      {
+        "questionId": 1004,
+        "value": "코딩테스트 SQL 문제를 꾸준히 풀 동료가 필요해 지원합니다."
+      }
+    ],
+    "withdrawn": false,
+    "decision": "ACCEPTED",
+    "memo": null,
+    "submittedDaysAgo": 5
+  },
+  {
+    "id": 504,
+    "postingId": 102,
+    "applicantId": 9,
+    "snapshot": {
+      "name": "한도윤",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_2",
+      "fields": [
+        "DEV"
+      ],
+      "bio": "알고리즘과 백엔드를 공부하는 중",
+      "skills": [
+        {
+          "name": "Java",
+          "level": "MID"
+        },
+        {
+          "name": "C++",
+          "level": "MID"
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-doyun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "portfolioLink:93"
+    ],
+    "contacts": [],
+    "answers": [
+      {
+        "questionId": 1004,
+        "value": "SQL을 처음 배우는 중이라 함께 공부하고 싶습니다."
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 4
+  },
+  {
+    "id": 505,
+    "postingId": 103,
+    "applicantId": 1,
+    "snapshot": {
+      "name": "김민준",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "DEV",
+        "DATA"
+      ],
+      "bio": "데이터로 문제를 푸는 백엔드 개발자",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "level": "HIGH"
+        },
+        {
+          "name": "Java",
+          "level": "HIGH"
+        },
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "SQL",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "PROJECT",
+          "title": "캠퍼스 중고거래 웹앱",
+          "role": "백엔드 개발",
+          "startDate": "2026-03-02",
+          "endDate": "2026-06-20",
+          "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+        },
+        {
+          "type": "AWARD",
+          "title": "교내 해커톤 장려상",
+          "role": "팀장",
+          "startDate": "2025-11-15",
+          "endDate": "2025-11-16",
+          "description": "공공 데이터를 활용한 캠퍼스 안내 서비스로 수상했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-minjun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:21",
+      "experience:22",
+      "portfolioLink:31",
+      "contact:PHONE"
+    ],
+    "contacts": [
+      {
+        "type": "PHONE",
+        "value": "010-1234-5678",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1005,
+        "value": "Spring Boot로 실제 서비스를 끝까지 만들어 보고 싶습니다."
+      }
+    ],
+    "withdrawn": false,
+    "decision": "ACCEPTED",
+    "memo": null,
+    "submittedDaysAgo": 20
+  },
+  {
+    "id": 506,
+    "postingId": 103,
+    "applicantId": 9,
+    "snapshot": {
+      "name": "한도윤",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_2",
+      "fields": [
+        "DEV"
+      ],
+      "bio": "알고리즘과 백엔드를 공부하는 중",
+      "skills": [
+        {
+          "name": "Java",
+          "level": "MID"
+        },
+        {
+          "name": "C++",
+          "level": "MID"
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-doyun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "portfolioLink:93",
+      "contact:PHONE"
+    ],
+    "contacts": [
+      {
+        "type": "PHONE",
+        "value": "010-5678-9012",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1005,
+        "value": "백엔드 개발을 배우고 싶어 지원합니다."
+      }
+    ],
+    "withdrawn": false,
+    "decision": "REJECTED",
+    "memo": null,
+    "submittedDaysAgo": 19
+  },
+  {
+    "id": 507,
+    "postingId": 104,
+    "applicantId": 1,
+    "snapshot": {
+      "name": "김민준",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "DEV",
+        "DATA"
+      ],
+      "bio": "데이터로 문제를 푸는 백엔드 개발자",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "level": "HIGH"
+        },
+        {
+          "name": "Java",
+          "level": "HIGH"
+        },
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "SQL",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "PROJECT",
+          "title": "캠퍼스 중고거래 웹앱",
+          "role": "백엔드 개발",
+          "startDate": "2026-03-02",
+          "endDate": "2026-06-20",
+          "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+        },
+        {
+          "type": "AWARD",
+          "title": "교내 해커톤 장려상",
+          "role": "팀장",
+          "startDate": "2025-11-15",
+          "endDate": "2025-11-16",
+          "description": "공공 데이터를 활용한 캠퍼스 안내 서비스로 수상했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-minjun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:21",
+      "experience:22",
+      "portfolioLink:31",
+      "contact:SCHOOL_EMAIL"
+    ],
+    "contacts": [
+      {
+        "type": "SCHOOL_EMAIL",
+        "value": "minjun.kim@g.skku.edu",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1006,
+        "value": "데이터 엔지니어링 세션에서 실무에 가까운 경험을 쌓고 싶습니다."
+      },
+      {
+        "questionId": 1007,
+        "value": [
+          "머신러닝",
+          "SQL·데이터 엔지니어링"
+        ]
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 1
+  },
+  {
+    "id": 508,
+    "postingId": 106,
+    "applicantId": 10,
+    "snapshot": {
+      "name": "윤서아",
+      "majorPrimary": "경영학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "PLANNING_MARKETING",
+        "DESIGN"
+      ],
+      "bio": "마케팅 기획과 콘텐츠 제작에 관심 있어요",
+      "skills": [
+        {
+          "name": "Premiere Pro",
+          "level": "MID"
+        },
+        {
+          "name": "Notion",
+          "level": "HIGH"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "contact:SCHOOL_EMAIL"
+    ],
+    "contacts": [
+      {
+        "type": "SCHOOL_EMAIL",
+        "value": "seoa.yoon@g.skku.edu",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1009,
+        "value": "앱 홍보 화면과 온보딩 디자인을 함께 고민하고 싶습니다."
+      },
+      {
+        "questionId": 1010,
+        "value": "없음(배우면서 참여)"
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 0.5
+  },
+  {
+    "id": 509,
+    "postingId": 104,
+    "applicantId": 2,
+    "snapshot": {
+      "name": "이서연",
+      "majorPrimary": "통계학과",
+      "academicStatus": "GRADE_2",
+      "fields": [
+        "DATA",
+        "AI"
+      ],
+      "bio": "R과 Python으로 데이터 분석을 공부하고 있어요",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "R",
+          "level": "HIGH"
+        },
+        {
+          "name": "Pandas",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "EXTRACURRICULAR",
+          "title": "통계 분석 대외활동",
+          "role": "데이터 전처리",
+          "startDate": "2026-07-01",
+          "endDate": "2026-08-31",
+          "description": "설문 데이터를 정제하고 시각화했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "블로그",
+          "url": "https://example.com/blog/seoyeon"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:54",
+      "portfolioLink:55",
+      "contact:SCHOOL_EMAIL"
+    ],
+    "contacts": [
+      {
+        "type": "SCHOOL_EMAIL",
+        "value": "seoyeon.lee@g.skku.edu",
+        "consent": true
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 1006,
+        "value": "학회 세션으로 머신러닝 기초를 탄탄히 다지고 싶습니다."
+      },
+      {
+        "questionId": 1007,
+        "value": [
+          "데이터 시각화",
+          "머신러닝"
+        ]
+      }
+    ],
+    "withdrawn": false,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 2
+  },
+  {
+    "id": 510,
+    "postingId": 112,
+    "applicantId": 1,
+    "snapshot": {
+      "name": "김민준",
+      "majorPrimary": "소프트웨어학과",
+      "academicStatus": "GRADE_3",
+      "fields": [
+        "DEV",
+        "DATA"
+      ],
+      "bio": "데이터로 문제를 푸는 백엔드 개발자",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "level": "HIGH"
+        },
+        {
+          "name": "Java",
+          "level": "HIGH"
+        },
+        {
+          "name": "Python",
+          "level": "MID"
+        },
+        {
+          "name": "SQL",
+          "level": "MID"
+        }
+      ],
+      "experiences": [
+        {
+          "type": "PROJECT",
+          "title": "캠퍼스 중고거래 웹앱",
+          "role": "백엔드 개발",
+          "startDate": "2026-03-02",
+          "endDate": "2026-06-20",
+          "description": "Spring Boot와 MySQL로 거래 게시판·채팅 API를 구현했습니다."
+        },
+        {
+          "type": "AWARD",
+          "title": "교내 해커톤 장려상",
+          "role": "팀장",
+          "startDate": "2025-11-15",
+          "endDate": "2025-11-16",
+          "description": "공공 데이터를 활용한 캠퍼스 안내 서비스로 수상했습니다."
+        }
+      ],
+      "portfolioLinks": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example-minjun"
+        }
+      ]
+    },
+    "sharedItems": [
+      "bio",
+      "skills",
+      "experience:21",
+      "experience:22",
+      "portfolioLink:31"
+    ],
+    "contacts": [],
+    "answers": [
+      {
+        "questionId": 1014,
+        "value": "투자 데이터 시각화에 관심이 있습니다."
+      }
+    ],
+    "withdrawn": true,
+    "decision": "PENDING",
+    "memo": null,
+    "submittedDaysAgo": 2
+  }
+]

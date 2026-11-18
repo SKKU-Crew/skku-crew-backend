@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "type": "PERSONAL",
+    "name": "김민준",
+    "schoolEmail": "minjun.kim@g.skku.edu",
+    "demoDescription": "지원자 · 소프트웨어학과 3학년 (시연용 지원자)"
+  },
+  {
+    "id": 2,
+    "type": "PERSONAL",
+    "name": "이서연",
+    "schoolEmail": "seoyeon.lee@g.skku.edu",
+    "demoDescription": "지원자 · 통계학과 2학년"
+  },
+  {
+    "id": 3,
+    "type": "PERSONAL",
+    "name": "최유진",
+    "schoolEmail": "yujin.choi@g.skku.edu",
+    "demoDescription": "지원자 · 디자인학과 3학년"
+  },
+  {
+    "id": 4,
+    "type": "PERSONAL",
+    "name": "박지훈",
+    "schoolEmail": "jihoon.park@g.skku.edu",
+    "demoDescription": "개인 모집자 · 통계학과 4학년 (시연용 모집자)"
+  },
+  {
+    "id": 5,
+    "type": "PERSONAL",
+    "name": "정하늘",
+    "schoolEmail": "haneul.jung@g.skku.edu",
+    "demoDescription": "개인 모집자 · 소프트웨어학과 4학년"
+  },
+  {
+    "id": 6,
+    "type": "ORGANIZATION",
+    "name": "D:LAB",
+    "contactEmail": "dlab.recruit@example.com",
+    "orgIntro": "데이터 분석 학회",
+    "demoDescription": "단체회원 · 데이터 분석 학회 (인증 완료)"
+  },
+  {
+    "id": 7,
+    "type": "ORGANIZATION",
+    "name": "R:BOT",
+    "contactEmail": "rbot.recruit@example.com",
+    "orgIntro": "로봇 학회",
+    "demoDescription": "단체회원 · 로봇 학회 (인증 완료)"
+  },
+  {
+    "id": 8,
+    "type": "ADMIN",
+    "name": "SKKU Crew 운영자",
+    "demoDescription": "시스템 관리자"
+  },
+  {
+    "id": 9,
+    "type": "PERSONAL",
+    "name": "한도윤",
+    "schoolEmail": "doyun.han@g.skku.edu",
+    "demoDescription": "지원자 · 소프트웨어학과 2학년"
+  },
+  {
+    "id": 10,
+    "type": "PERSONAL",
+    "name": "윤서아",
+    "schoolEmail": "seoa.yoon@g.skku.edu",
+    "demoDescription": "지원자 · 경영학과 3학년"
+  }
+]

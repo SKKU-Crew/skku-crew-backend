@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: skku-crew-backend
+  jackson:
+    time-zone: Asia/Seoul
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+
+app:
+  # 서버 시작 시 읽을 더미 데이터 위치 (classpath)
+  seed-location: seed
+  # MCP 연동 시 로그인 없이 사용할 데모 지원자 회원 ID
+  mcp-demo-member-id: 1
