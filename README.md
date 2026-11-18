@@ -3,8 +3,10 @@
 SWE3002-42 Team 7 최종 발표 시연용 백엔드. SRS의 핵심 흐름(공고 탐색 → 지원 → 검토·선발 → 결과 발표)만 남긴 "빈 깡통" 서버다.
 DB 없이 `src/main/resources/seed/*.json` 더미 데이터를 메모리에 올려서 동작한다.
 
-- Spring Boot 3.3.5 / Java 17 / Gradle
+- Spring Boot 3.5.7 / Java 17 / Gradle
 - API 명세: [`docs/API.md`](docs/API.md)
+- 프론트(PWA) 담당용: [`docs/FRONTEND.md`](docs/FRONTEND.md) — 화면별 API, 코드값 표시, 화면에 넣지 말 것
+- GPT 연동(MCP) 담당용: [`docs/MCP.md`](docs/MCP.md) — 도구 8개, 설정, 코드 뼈대, ChatGPT 연결 순서
 - Swagger UI: http://localhost:8080/swagger-ui.html (오른쪽 위 **Authorize**에 `demo-1` 입력 후 호출)
 
 ## 실행
@@ -89,7 +91,7 @@ ChatGPT는 로컬 서버(`localhost`)에 직접 못 붙는다. 공개 HTTPS 주�
 
 1. 이 서버 실행 후 터널: `ngrok http 8080` → `https://xxxx.ngrok-free.app`
 2. MCP 서버를 붙이는 방법 둘 중 하나
-   - **같은 Spring 앱에 추가**: Spring AI MCP Server(WebMVC) 스타터 + `@Tool` 메서드에서 `PostingService`, `ApplicationService` 를 그대로 호출. Boot 3.3 과 맞는 Spring AI 버전은 직접 확인할 것(2.x 는 Boot 4 기준일 수 있음)
+   - **같은 Spring 앱에 추가** (발표 자료 시스템 구조 그림과 같은 방식): `build.gradle` 주석에 있는 Spring AI 1.1.x BOM + `spring-ai-starter-mcp-server-webmvc` 추가, `application.yml`에 `spring.ai.mcp.server.protocol: STREAMABLE` (엔드포인트 기본값 `/mcp`). `@Tool` 메서드에서 `PostingService`, `ApplicationService`, `BookmarkService`를 그대로 호출하고 `ToolCallbackProvider` 빈으로 등록. Spring AI 1.1은 Spring Boot 3.4·3.5만 지원해서 이 프로젝트를 3.5.7로 올려 둠. 2.x는 쓰지 말 것(Boot 4 기준)
    - **별도 MCP 서버**(Python FastMCP 등)에서 이 REST API를 호출 — 백엔드 코드를 안 건드려도 됨
 3. ChatGPT 설정에서 Developer mode 켜고 커넥터에 MCP 주소(`https://.../mcp`) 등록
 4. 시연은 인증 없이: MCP 쪽에서 고정 회원으로 호출 (`application.yml` 의 `app.mcp-demo-member-id: 1`, 토큰 `Bearer demo-1`)
@@ -109,6 +111,14 @@ ChatGPT는 로컬 서버(`localhost`)에 직접 못 붙는다. 공개 HTTPS 주�
    - 읽기 도구는 `readOnlyHint: true`, 쓰기 도구는 `readOnlyHint: false` (FR-MCP-12)
    - 지원서 제출·공고 마감·결과 발표는 도구로 만들지 말 것 (BR-14, FR-MCP-06). 요청받으면 웹 링크만 돌려준다
    - 결과에 웹 링크를 붙일 때는 PWA 주소 기준으로 `/postings/{id}` 같은 경로를 프론트 담당이랑 맞출 것
+
+## 프론트(PWA) 연동 메모
+
+- CORS는 모든 origin, `GET·POST·PUT·PATCH·DELETE` 허용. 로그인 후 받은 토큰을 매 요청 `Authorization: Bearer demo-1` 헤더로 보내면 된다
+- 시간은 `2026-11-18T15:47:55+09:00` 형식(ISO-8601, 오프셋 포함). Dart `DateTime.parse` 그대로 됨
+- 응답 형식은 Swagger(`/v3/api-docs`)가 기준. OpenAPI Generator로 Dart 클라이언트를 뽑아 써도 된다
+- PWA를 https(배포 주소)에서 띄우고 백엔드는 http://localhost면 브라우저가 막을 수 있다. 시연 녹화는 둘 다 로컬에서 하거나, 백엔드도 ngrok https 주소로 연다
+- ngrok 무료 주소로 API를 부를 때는 요청 헤더에 `ngrok-skip-browser-warning: true`를 넣어야 경고 페이지 대신 JSON이 온다
 
 ## 주의
 
